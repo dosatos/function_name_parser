@@ -1,4 +1,4 @@
-class CommandLineInterfaceParser:
+class CommandLineInterface:
 
     def __init__(self, arguments):
         self.parts_of_speach = ['VB', 'NN']

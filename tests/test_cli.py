@@ -1,27 +1,27 @@
 import pytest
-from hw2.utilities import cli
+from hw2.utilities.cli import CommandLineInterface
 
 
 @pytest.fixture
-def clip():
-	return cli.CommandLineInterfaceParser
+def cli():
+	return CommandLineInterface
 	
 
-def test_all_arguments_correct(clip):
+def test_all_arguments_correct(cli):
 	with pytest.raises(TypeError):
-		cli = clip(['python', 'web', '10', 'VB'])
+		cli(['python', 'web', '10', 'VB'])
 
 
-def test_source_type_wrong(clip):
+def test_source_type_wrong(cli):
 	with pytest.raises(TypeError):
-		cli = clip(['python', 'fold', '10', 'VB'])
+		cli(['python', 'fold', '10', 'VB'])
 
 
-def test_word_count_wrong(clip):
+def test_word_count_wrong(cli):
 	with pytest.raises(TypeError):
-		cli = clip(['python', 'folder', 'ten', 'VB'])
+		cli(['python', 'folder', 'ten', 'VB'])
 
 
-def test_pos_wrong(clip):
+def test_pos_wrong(cli):
 	with pytest.raises(TypeError):
-		cli = clip(['python', 'folder', '10', 'Vb'])
+		cli(['python', 'folder', '10', 'Vb'])
