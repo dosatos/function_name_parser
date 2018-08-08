@@ -10,6 +10,11 @@ from utilities import cli
 def main():
     print(sys.argv)
     clip = cli.CommandLineInterfaceParser(sys.argv)
+
+    source_type = clip.get_source_type()
+    words_count = clip.get_words_count()
+    part_of_speach = clip.get_part_of_speach()
+    print(source_type, words_count, part_of_speach)
     return
 
     number_of_words = helper.get_words_limit()

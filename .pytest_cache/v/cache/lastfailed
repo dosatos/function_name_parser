@@ -1,6 +1,1 @@
-{
-  "test_cli.py::test_all_arguments_correct": true,
-  "test_cli.py::test_pos_wrong": true,
-  "test_cli.py::test_source_type_wrong": true,
-  "test_cli.py::test_word_count_wrong": true
-}
+{}
