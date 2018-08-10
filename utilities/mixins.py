@@ -1,6 +1,6 @@
 import ast
 from nltk import pos_tag
-# from logger import Logger
+from utilities.logger import Logger
 
 
 class ValidatorMixin:
@@ -36,21 +36,25 @@ class ValidatorMixin:
 
     def validate_source_type(self, source_type):
         if source_type not in self.source_types:
-            raise AttributeError("Wrong source type.\n", self.error_message)
+            Logger().error("Wrong source type.\n")
+            raise AttributeError(self.error_message)
     
     def validate_part_of_speech(self, part_of_speech):
         if part_of_speech not in self.parts_of_speech:
-            raise AttributeError(f"not supported part of speech \n {self.error_message}")
+            Logger().error(f"not supported part of speech \n {self.error_message}")
+            raise AttributeError(self.error_message)
 
     def validate_words_count(self, words_count):
         try:
             return int(words_count)
         except ValueError as e:
-            raise ValueError("Wrong word count.\n", self.error_message)
+            Logger().error("Wrong word count.\n")
+            raise ValueError(self.error_message)
 
     def validate_most_common_words(self, counter):
     	if not isinstance(counter, dict):
-    		raise TypeError("Wrong word counter format")
+            Logger().error("Wrong word counter format")
+            raise TypeError(self.error_message)
 
 
 class PyScriptParserMixin:

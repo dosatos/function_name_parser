@@ -23,6 +23,7 @@ def main():
         parser = WebParser(part_of_speech, words_count)
     most_common_words = parser.parse_most_common_words(part_of_speech, words_count, directories=['target_folder'])
     Logger().message(debug_message=most_common_words)
+    print("Saved into a file 'message.log'")
 
 
 if __name__== "__main__":
