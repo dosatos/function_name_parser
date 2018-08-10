@@ -1,5 +1,5 @@
 import pytest
-from hw2.utilities.cli import CommandLineInterface
+from ..utilities.cli import CommandLineInterface
 
 
 @pytest.fixture
@@ -8,20 +8,19 @@ def cli():
 	
 
 def test_all_arguments_correct(cli):
-	with pytest.raises(TypeError):
-		cli(['python', 'web', '10', 'VB'])
-
+	cli(['python', 'web', 'verb', '10'])
+		
 
 def test_source_type_wrong(cli):
-	with pytest.raises(TypeError):
-		cli(['python', 'fold', '10', 'VB'])
-
-
-def test_word_count_wrong(cli):
-	with pytest.raises(TypeError):
-		cli(['python', 'folder', 'ten', 'VB'])
+	with pytest.raises(AttributeError):
+		cli(['python', 'fold', 'verb', '10'])
 
 
 def test_pos_wrong(cli):
-	with pytest.raises(TypeError):
-		cli(['python', 'folder', '10', 'Vb'])
+	with pytest.raises(AttributeError):
+		cli(['python', 'folder', 'Verb', '10'])
+
+
+def test_word_count_wrong(cli):
+	with pytest.raises(ValueError):
+		cli(['python', 'folder', 'verb', 'ten'])

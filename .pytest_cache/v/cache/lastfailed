@@ -1,1 +1,8 @@
-{}
+{
+  "tests/test_parser.py::test_get_content": true,
+  "tests/test_parser.py::test_get_scripts": true,
+  "tests/test_parser.py::test_get_words": true,
+  "tests/test_parser.py::test_parser_update_words_counter": true,
+  "tests/test_parser.py::test_parser_update_words_counter_type_error": true,
+  "tests/test_parser.py::test_set_part_of_speech": true
+}

@@ -7,5 +7,20 @@ $ virtualenv --python=$(which python3) py
 $ source py/bin/activate  
 $ pip install -r requirements.txt
 
-##### To run the program:
-$ python3 frequently_used_verbs.py
+##### To run the program use the following format, please:
+    
+    >>> python3 get_words.py <source_type> <POS> <words_count>
+        
+
+        :source_type      str: source type. Available: [web, folder]
+        :POS         str: (part of speech). Available: [verb, noun]
+        :words_count  int: number of words
+        
+
+    For example:
+
+    >>> python3 get_words.py folder verb 105
+
+    OR
+
+    >>> python3 get_words.py web noun 77
