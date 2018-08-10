@@ -55,5 +55,5 @@ def test_folder_get_words(folder_parser_setup, folder_paths):
 
 def test_parse_folder(folder_parser_setup):
 	directories = ['target_folder']
-	most_common_words = folder_parser_setup.parse_folder('verb', words_count=10, directories=directories)
+	most_common_words = folder_parser_setup.parse_most_common_words('verb', words_count=10, directories=directories)
 	assert most_common_words == [('obtain', 2), ('print', 1), ('simplify', 1), ('take', 1), ('took', 1)]

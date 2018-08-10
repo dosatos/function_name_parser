@@ -1,0 +1,3 @@
+2018-08-10 23:33:34,984 - root - DEBUG - [('obtain', 2), ('print', 1)]
+2018-08-10 23:34:06,446 - root - DEBUG - [('obtain', 2), ('print', 1)]
+2018-08-10 23:34:13,772 - root - DEBUG - [('obtain', 2), ('print', 1), ('simplify', 1), ('take', 1), ('took', 1)]

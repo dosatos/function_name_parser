@@ -21,11 +21,11 @@ class ValidatorMixin:
 
     For example:
 
-    >>> python3 get_words.py folder VB 105
+    >>> python3 get_words.py folder verb 105
 
     OR
 
-    >>> python3 get_words.py web NN 77
+    >>> python3 get_words.py web noun 77
         
 ========================================================================
 

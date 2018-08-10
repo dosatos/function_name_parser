@@ -23,7 +23,7 @@ class CommandLineInterface(ValidatorMixin):
 
     def set_words_count(self, words_count):
         self.validate_words_count(words_count)
-        self.words_count = words_count
+        self.words_count = int(words_count)
 
     def get_part_of_speech(self):
         return self.part_of_speech

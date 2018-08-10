@@ -54,10 +54,11 @@ class FolderParser(Parser):
     def __init__(self, part_of_speech, words_count):
         super().__init__(part_of_speech, words_count)
 
-    def parse_folder(self, part_of_speech, words_count, directories):
+    def parse_most_common_words(self, part_of_speech, words_count, directories):
         paths = self.get_paths_to_script_files(directories)
         words = self.get_words(paths, part_of_speech)
-        most_common_words = collections.Counter(words).most_common(words_count)
+        counted_words = collections.Counter(words)
+        most_common_words = counted_words.most_common(words_count)
         return most_common_words
 
     def get_paths_to_script_files(self, directories, extension=".py"):

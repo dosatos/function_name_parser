@@ -5,7 +5,9 @@ import collections
 import ast
 
 from utilities.cli import CommandLineInterface
-from utilities.parser import Parser
+from utilities.parser import FolderParser, WebParser
+from utilities.logger import Logger
+
 
 
 def main():
@@ -15,11 +17,12 @@ def main():
     part_of_speech = cli.get_part_of_speech()
     words_count = cli.get_words_count()
 
-    parser = Parser()
     if source_type == 'folder':
-        parser.parse_folder(part_of_speech, words_count)
+        parser = FolderParser(part_of_speech, words_count)
     elif source_type == 'web':
-        parser.parse_url(part_of_speech, words_count)
+        parser = WebParser(part_of_speech, words_count)
+    most_common_words = parser.parse_most_common_words(part_of_speech, words_count, directories=['target_folder'])
+    Logger().message(debug_message=most_common_words)
 
 
 if __name__== "__main__":
